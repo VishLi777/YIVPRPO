@@ -1,0 +1,19 @@
+language: java
+
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: vishli777
+
+jdk:
+  - openjdk-21
+script:
+  - mvn clean install sonar:sonar -Dsonar.projectKey=VishLi777_YIVPRPO
+
+notifications:
+  email:
+    recipients:
+      - lidaoslavskaya@gmail.com
+    on_success: always
+    on_failure: always
